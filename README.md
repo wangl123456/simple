@@ -1,0 +1,2 @@
+#mybatis示例
+本项目中包含了mybatis的常见用法，是以个用于学习mybatis的最好项目.
