@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+	   <setting name="logImpl" value="LOG4J"/>
+  <!-- <setting name="mapUnderscoreToCamelCase" value="true"/>-->
+       <setting name="aggressiveLazyLoading" value="false"/>
+       <setting name="lazyLoadTriggerMethods" value="equals"/>
+ 	</settings>
+	<typeAliases>
+	   <package name="com.su.model"/>
+	</typeAliases>
+	<environments default="development">
+	  <environment id="development">
+	    <transactionManager type="JDBC">
+	       <property name="" value=""/>
+	    </transactionManager>
+	    <dataSource type="UNPOOLED">
+	       <property name="driver" value="com.mysql.jdbc.Driver"/>
+	       <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+	       <property name="username" value="root"/>
+	       <property name="password" value="zz654321"/>
+	     </dataSource>
+	  </environment>
+	</environments>
+	<mappers>      
+	  <!--使用注解的方式  使用接口类和使用包名时，UserMapper.xml与UserMapper.java（接口）必须在同一目录下并且必须同名-->        
+	  <mapper resource="com/su/mapper/CountryMapper.xml"/>
+	  <mapper resource="com/su/mapper/PrivilegeMapper.xml"/>
+	  <mapper resource="com/su/mapper/RoleMapper.xml"/>
+	  <mapper resource="com/su/mapper/RolePrivilegeMapper.xml"/>
+	  <mapper resource="com/su/mapper/UserMapper.xml"/>
+	  <mapper resource="com/su/mapper/UserRoleMapper.xml"/>
+	</mappers>
+	<!-- <mappers>
+	  <package name="com.su.mapper"/>
+	</mappers> -->
+</configuration>
